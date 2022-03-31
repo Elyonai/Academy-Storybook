@@ -1,7 +1,11 @@
 import React from 'react';
 import { BtnProps } from './types/btn-props';
 
-export const Button = ({ children, variant, ...props }: BtnProps) => {
+export const Button = ({
+  children,
+  variant = 'primary',
+  ...props
+}: BtnProps) => {
   return (
     <button
       {...props}

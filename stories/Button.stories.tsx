@@ -6,9 +6,21 @@ import { BtnProps } from '../src/types/btn-props';
 const meta: Meta = {
   title: 'Button',
   component: Button,
+  argTypes: {
+    children: {
+      defaultValue: 'Default text',
+    },
+  },
 };
 
 export default meta;
 
-export const Default = () => <Button variant="primary">Click Me</Button>;
-export const Secondary = () => <Button variant="secondary">Click Me</Button>;
+const Template: Story<BtnProps> = (args) => <Button {...args} />;
+
+export const Default = () => Template.bind({});
+export const Secondary = () => Template.bind({});
+
+Secondary.args = {
+  variant: 'secondary',
+  children: ' I am secondary',
+};
